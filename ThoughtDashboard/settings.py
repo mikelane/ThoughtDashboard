@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ThoughtDashboard'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -95,7 +96,7 @@ USE_TZ = True
 DATABASES['default'] = dj_database_url.config()
 
 # Enable Connection Pooling (if desired)
-DATABASES['default']['ENGINE'] = 'django_postgrespool'
+# DATABASES['default']['ENGINE'] = 'django_postgrespool'
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -112,6 +113,19 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
+)
+
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+#     'django.template.loaders.eggs.Loader',
+)
+
+TEMPLATE_DIRS = (
+    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+    'templates',
 )
 
 # Simplified static file serving.
