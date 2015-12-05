@@ -20,10 +20,12 @@ def list_parser(tdb):
     totals = Counter({})
     i = 0
     for item in tdb:
+        e = ''
         if 'excerpt' in item:
-            totals += excerpt_counter(item['excerpt'])
-        else:
-            print(item)
+            e += item['excerpt']
+        if 'given_title' in item:
+            e += ' ' + item['given_title']
+        totals += excerpt_counter(e)
     return totals
 
 
