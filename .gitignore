@@ -3,3 +3,5 @@ venv
 staticfiles
 config
 .idea/
+.DS_Store
+*.json
