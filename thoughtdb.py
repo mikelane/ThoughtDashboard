@@ -6,7 +6,8 @@ Thought Dashboard data handler
 
 __author__ = 'Mike Lane'
 
-import json
+import json, nltk
+from hack_frame import list_parser
 
 class Tdb:
     def __init__(self, filename):
@@ -28,6 +29,8 @@ class Tdb:
             print("{}".format(i))
 
 if __name__ == "__main__":
+    # nltk.download()
     # tdb = Tdb("bad")
     tdb = Tdb("completeThunderData.json")
+    list_parser(tdb.stories)
     print(tdb)

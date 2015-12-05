@@ -18,12 +18,17 @@ def excerpt_counter(excerpt):
 
 def list_parser(tdb):
     totals = Counter({})
+    i = 0
     for item in tdb:
-        totals += excerpt_counter(item['excerpt'])
+        if 'excerpt' in item:
+            totals += excerpt_counter(item['excerpt'])
+        else:
+            print(item)
     return totals
 
 
 if __name__ == '__main__':
+
     list_parser(tdb)
 
 
