@@ -1,0 +1,1 @@
+web: gunicorn ThoughtDashboard.wsgi --log-file -
