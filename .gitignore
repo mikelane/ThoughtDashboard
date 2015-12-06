@@ -5,3 +5,7 @@ config
 .idea/
 .DS_Store
 *.json
+*.ipynb
+.ipynb_checkpoints/
+*.csv
+*.ipynb_checkpoints
