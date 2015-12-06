@@ -8,8 +8,10 @@ from collections import Counter
 
 def excerpt_counter(excerpt):
 
+    excerpt = excerpt.encode('ascii','ignore')
     stop = stopwords.words('english')
     tokens = nltk.word_tokenize(excerpt)
+    new_tokens = [x.lower().strip() for x in tokens]
     count_dict = Counter(tokens)
     for word in stop:
         count_dict.pop(word, None)
