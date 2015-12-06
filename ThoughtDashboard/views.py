@@ -5,3 +5,6 @@ from django.shortcuts import render
 def index(request):
     # template = loader.get_template('index.html')
     return render(request, 'index.html')
+
+def details(request):
+    return render(request,'details.html')
